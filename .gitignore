@@ -1,4 +1,5 @@
 .env
+data
 
 # Ignore bundler config.
 poll/.bundle
