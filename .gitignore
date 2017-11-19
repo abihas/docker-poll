@@ -1,0 +1,13 @@
+.env
+
+# Ignore bundler config.
+poll/.bundle
+
+# Ignore the default SQLite database.
+poll/db/*.sqlite3
+poll/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+poll/log/*.log
+poll/tmp
+poll/config/application.yml

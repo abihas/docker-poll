@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:9.6-alpine'
+    volumes:
+      - './data/postgres:/var/lib/postgresql/data'
+    env_file:
+      - '.env'
+  
+  poll:
+    depends_on:
+      - 'postgres'
+    build: .
+    ports:
+      - '3000:3000'
+    env_file:
+      - '.env'
+    command: ["/usr/app/wait-for-postgres.sh", "postgres", "/usr/app/init.sh"]
